@@ -1,3 +1,1 @@
-# SYS265
-hostname
-hostname
+mgmt01-abutt
