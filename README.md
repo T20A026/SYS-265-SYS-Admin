@@ -1,1 +1,2 @@
 # SYS265
+hostname
