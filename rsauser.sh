@@ -21,7 +21,7 @@ else
     sudo chmod 700 /home/$1/.ssh
     sudo chmod 600 /home/$1/.ssh/authorized_keys
     sudo chown -R $1:$1 /home/$1/.ssh
-    sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
+    sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no' /etc/ssh/sshd_config
     /etc/init.d/ssh restart
     echo "Done"
 fi
