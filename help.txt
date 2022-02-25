@@ -1,7 +1,7 @@
 CERT SERVER:
 cd /etc/pki/CA
 touch index.txt 
-echo 1000 > seria
+echo 1000 > serial
 
 openssl genrsa -des3 -out private/cakey.pem 2048
 cp /private/cakey.pem >> /etc/pki/tls/private
