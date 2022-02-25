@@ -1,5 +1,5 @@
 #!/bin/bash
-cd etc/pki/CA
+cd /etc/pki/CA
 touch index.txt
 echo 1000 > serial
 openssl genrsa -des3 -out private/cakey.pem 2048
