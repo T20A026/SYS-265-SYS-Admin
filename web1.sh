@@ -1,9 +1,7 @@
 #!/bin/bash
-cd /etc/pki/CA
-touch index.txt 
-echo 1000 > serial
-
-openssl genrsa -des3 -out private/cakey.pem 2048
-cp /private/cakey.pem >> /etc/pki/tls/private
-
-openssl req -new -x509 -days 365 -key private/cakey.pem -out cacert.pem
+yum install -y httpd
+firewall-cmd --permanent --add-port=80/tcp
+firewall-cmd --reload
+firewall-cmd --query-port=80/tcp
+openssl req -newkey rsa:2048 -keyout websrv.key -out websrv.csr
+scp USER@IP:websrv.csr /home/USER
