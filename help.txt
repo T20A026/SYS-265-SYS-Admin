@@ -6,7 +6,7 @@ echo 1000 > serial
 Private key:
 openssl genrsa -des3 -out private/cakey.pem 2048
 cp /private/cakey.pem >> /etc/pki/tls/private
-
+Making Cert:
 openssl req -new -x509 -days 365 -key private/cakey.pem -out cacert.pem
 
 WEB SERVER:
@@ -18,7 +18,7 @@ firewall-cmd --query-port=80/tcp
 Generating Reqst:
 openssl req -newkey rsa:2048 -keyout websrv.key -out websrv.csr
 Transffering request:
-scp USER@IP:websrv.csr /home/USER
+scp websrv.csr USER@IP:/home/USER
 
 CERT SERVER:
 Making CA Cert
